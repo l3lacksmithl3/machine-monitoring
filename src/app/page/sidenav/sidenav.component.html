@@ -1,0 +1,8 @@
+<div  *ngFor="let item of this.page">
+  <button class="btn_set" [routerLink]="[item.path]" [routerLinkActive]="['is-active']">
+    <div class="button-content">
+      <img [src]="item.icon" style="width: 35px;margin: 8px;">
+      <span style="font-size: 18px;">{{item.title}}</span>
+    </div>
+  </button>
+</div>

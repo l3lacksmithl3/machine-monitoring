@@ -1,0 +1,132 @@
+<!-- <input hidden type="file" id="files" (change)="def_import_Master($event)" multiple="false">
+<label class="btn btn-info " for="files" style="margin: 2px;"><img src="assets/excel.png" alt=""
+    style="width: 20px;margin: 5px;">Import</label> -->
+
+
+
+
+
+<div class="row" style="margin: 20px;">
+  <div class="col-lg-12">
+    <mat-card style="padding: 8px;">
+      <mat-card-header >
+        <mat-card-title>Master Machine</mat-card-title>
+        <mat-card-title>
+          <div class="row">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3"
+                  style="background-color: rgb(255, 255, 255);border-right: none;"><img src="assets/search.png"
+                    style="width: 25px;"></span>
+              </div>
+              <input
+                style="border-left: none;background-color: rgba(255, 255, 255, 0.998);border-radius: 0px 4px 4px 0px;"
+                type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" (keyup)="applyFilter($event)">
+              <input hidden type="file" id="files" (change)="def_import_Master($event)" multiple="false">
+              <label class="btn btn-info " for="files" style="margin: 2px;"><img src="assets/excel.png" alt=""
+                  style="width: 20px;margin: 5px;">Import</label>
+            </div>
+          </div>
+        </mat-card-title>
+      </mat-card-header>
+
+      <div class="mat-elevation-z8">
+        <div style="overflow: auto;">
+
+
+          <table mat-table [dataSource]="dataSource" style="text-align-last: center;width: max-content;">
+            <!-- <ng-container matColumnDef="0">
+              <th mat-header-cell *matHeaderCellDef > Action </th>
+              <td mat-cell *matCellDef="let element">
+                <button class="btn btn-success">A</button>
+                <button class="btn btn-info">B</button>
+              </td>
+            </ng-container> -->
+
+            <ng-container matColumnDef="1">
+              <th mat-header-cell *matHeaderCellDef> Machine Code. </th>
+              <td mat-cell *matCellDef="let element"> {{element['Machine code']}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="2">
+              <th mat-header-cell *matHeaderCellDef> Machine Name. </th>
+              <td mat-cell *matCellDef="let element"> {{element['Machine Name']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="3">
+              <th mat-header-cell *matHeaderCellDef> MC Model </th>
+              <td mat-cell *matCellDef="let element"> {{element['MC Model']}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="4">
+              <th mat-header-cell *matHeaderCellDef> MC Serial No. </th>
+              <td mat-cell *matCellDef="let element"> {{element['MC Serial No']}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="5">
+              <th mat-header-cell *matHeaderCellDef> MC Maker </th>
+              <td mat-cell *matCellDef="let element"> {{element['MC Maker']}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="6">
+              <th mat-header-cell *matHeaderCellDef> WI No. </th>
+              <td mat-cell *matCellDef="let element"> {{element['WI No']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="7">
+              <th mat-header-cell *matHeaderCellDef> MC Rank </th>
+              <td mat-cell *matCellDef="let element"> {{element['MC Rank']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="8">
+              <th mat-header-cell *matHeaderCellDef> DEPARTMENT ID </th>
+              <td mat-cell *matCellDef="let element"> {{element['DEPARTMENT ID']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="9">
+              <th mat-header-cell *matHeaderCellDef> LOCATION </th>
+              <td mat-cell *matCellDef="let element"> {{element['LOCATION']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="10">
+              <th mat-header-cell *matHeaderCellDef> Process </th>
+              <td mat-cell *matCellDef="let element"> {{element['Process']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="11">
+              <th mat-header-cell *matHeaderCellDef> PIC </th>
+              <td mat-cell *matCellDef="let element"> {{element['PIC']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="12">
+              <th mat-header-cell *matHeaderCellDef> Asset Code </th>
+              <td mat-cell *matCellDef="let element"> {{element['Asset Code']}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="13">
+              <th mat-header-cell *matHeaderCellDef> Year </th>
+              <td mat-cell *matCellDef="let element"> {{element['Year']}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          </table>
+        </div>
+        <mat-paginator [pageSizeOptions]="[10, 20, 100,400]" showFirstLastButtons
+          aria-label="Select page of periodic elements">
+        </mat-paginator>
+
+      </div>
+
+    </mat-card>
+  </div>
+</div>

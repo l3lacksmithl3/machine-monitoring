@@ -1,0 +1,17 @@
+table {
+  width: 200%;
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 0px 10px 0px 10px; /* ปรับช่องว่างรอบขอบของเซลล์ */
+}
+
+.mat-header-cell {
+  // font-weight: 600;
+  font-size: 14px;
+  color: black;
+}
+
+::ng-deep .mat-card-header-text {
+  width: -webkit-fill-available;
+}
