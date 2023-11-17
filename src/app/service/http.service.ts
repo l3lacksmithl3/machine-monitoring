@@ -142,6 +142,10 @@ export class HttpService {
   RawData_lastData(): Observable<any> {
     return this.http.get(this.Url + "/RawData/GetLastData/")
   }
+  RawData_CheckData(): Observable<any> {
+    return this.http.get(this.Url + "/RawData/CheckData/")
+  }
+
 
 
 
