@@ -1,0 +1,121 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>MACHINE STATUS Detail</mat-card-title>
+  </mat-card-header>
+
+
+  <div class="col-lg-12" *ngIf="this.dataShow">
+
+    <div class="row" >
+      <div class="col-lg-4">
+        <button class="btn btn-info" style="width: 100%;" (click)="backPage()">MACHINE STATUS</button>
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-info" style="width: 100%;">MACHINE STATUS Detail</button>
+      </div>
+      <div class="col-lg-4">
+        <button class="btn btn-info" style="width: 100%;">PRODUCTION RUNNING Q'ty</button>
+      </div>
+    </div>
+
+    <div class="row mt-2"  >
+      <div class="col-lg-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Machine Code</mat-label>
+          <input matInput [(ngModel)]="mc_code">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-2">
+        <mat-form-field appearance="outline">
+          <mat-label>Machine Name</mat-label>
+          <input matInput [(ngModel)]="mc_name" matTooltip="Info about the action">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-2">
+        <button [disabled]="this.dataShow.Machine_Status != 1"
+          [ngClass]="{'CheckState': this.dataShow.Machine_Status != 1}" class="btn btn-success setBTN "
+          style="height: 3.5rem;">RUNNING</button>
+      </div>
+
+      <div class="col-lg-2">
+        <button *ngIf="this.dataShow.Machine_Status == 1" class="btn btn-success setBTN"
+          style="height: 3.5rem;">{{this.dataShow.Time_Change_State == '-' ? '-':moment(this.dataShow.Time_Change_State).format('MMM DD, YYYY HH:mm')}}</button>
+        <button *ngIf="!(this.dataShow.Machine_Status == 1)" [disabled]="this.dataShow.Machine_Status != 1"
+          [ngClass]="{'CheckState': this.dataShow.Machine_Status != 1}" class="btn btn-success setBTN "
+          style="height: 3.5rem;">TIME</button>
+      </div>
+
+      <div class="col-lg-2">
+        <button [disabled]="this.dataShow.Machine_Status == 1"
+          [ngClass]="{'CheckState': this.dataShow.Machine_Status == 1}" class="btn btn-danger setBTN"
+          style="height: 3.5rem;">STOP</button>
+      </div>
+
+      <div class="col-lg-2">
+        <button *ngIf="this.dataShow.Machine_Status != 1" class="btn btn-danger setBTN"
+          style="height: 3.5rem;">{{this.dataShow.Time_Change_State == '-' ? '-':moment(this.dataShow.Time_Change_State).format('MMM DD, YYYY HH:mm')}}</button>
+        <button *ngIf="!(this.dataShow.Machine_Status != 1)" [disabled]="this.dataShow.Machine_Status == 1"
+          [ngClass]="{'CheckState': this.dataShow.Machine_Status == 1}" class="btn btn-danger setBTN"
+          style="height: 3.5rem;">TIME</button>
+      </div>
+
+    </div>
+
+
+    <div class="row" >
+      <div class="col-lg-2">
+        <mat-form-field appearance="outline">
+          <mat-label>% OEE</mat-label>
+          <input matInput [value]="OEE  + ' %'">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-4">
+        <mat-form-field appearance="outline">
+          <mat-label>Now </mat-label>
+          <input matInput value="   ">
+        </mat-form-field>
+      </div>
+
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Daily </mat-label>
+          <input matInput value="   ">
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Lose time Past </mat-label>
+          <input matInput value="Lose time Past 14 Day">
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-6">
+      </div>
+      <div class="col-lg-6">
+        <div id="chart-container"></div>
+      </div>
+      <div class="col-lg-6">
+        <div id="chart-Daily-OP"></div>
+      </div>
+      <div class="col-lg-6">
+        <div id="chart_MonthlyOP"></div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+</mat-card>

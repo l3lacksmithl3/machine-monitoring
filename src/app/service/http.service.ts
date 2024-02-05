@@ -138,12 +138,22 @@ export class HttpService {
   //   return this.http.post(this.Url + "/AssetMouser/delByCondition/", data)
   // }
 
+  RawData_Step_1(): Observable<any> {
+    return this.http.get(this.Url + "/raw_data_step_1/GetLastData/")
+  }
+  RawData_Step_1_CheckData(): Observable<any> {
+    return this.http.get(this.Url + "/raw_data_step_1/CheckData/")
+  }
+
 
   RawData_lastData(): Observable<any> {
     return this.http.get(this.Url + "/RawData/GetLastData/")
   }
   RawData_CheckData(): Observable<any> {
     return this.http.get(this.Url + "/RawData/CheckData/")
+  }
+  RawData_GetByCondition(data: any): Observable<any> {
+    return this.http.post(this.Url + "/RawData/GetDataByDay/", data)
   }
 
 
@@ -166,6 +176,15 @@ export class HttpService {
 
 
 
+
+  // data_by_day
+  data_by_day_getByCondition(data: any): Observable<any> {
+    return this.http.post(this.Url + "/data_by_day/getByCondition/", data)
+  }
+
+  data_by_month_getByCondition(data: any): Observable<any> {
+    return this.http.post(this.Url + "/data_by_month/getByCondition/", data)
+  }
 
 
 }

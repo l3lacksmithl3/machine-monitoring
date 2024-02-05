@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  UrlApi: "http://localhost:4049",
-  // UrlApi: "http://10.200.90.152:4049",
+  // UrlApi: "http://localhost:4049",
+  UrlApi: "http://10.200.90.152:4049",
 }
 /*
  * For easier debugging in development mode, you can import the following file

@@ -22,6 +22,9 @@ import {
   POSITION,
   PB_DIRECTION,
 } from "ngx-ui-loader";
+import { MasterLosstimeComponent } from './page/master-losstime/master-losstime.component';
+import { MachineStatusDetailComponent } from './page/machine-status-detail/machine-status-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
@@ -39,6 +42,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MachineStatusComponent,
     SidenavComponent,
     MasterComponent,
+    MasterLosstimeComponent,
+    MachineStatusDetailComponent,
 
   ],
 
@@ -52,6 +57,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgbModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    FormsModule
     // MatToolbarModule
   ],
   providers: [],

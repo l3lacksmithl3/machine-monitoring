@@ -4,6 +4,8 @@ import { MachineStatusComponent } from './page/machine-status/machine-status.com
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterComponent } from './page/master/master.component';
+import { MasterLosstimeComponent } from './page/master-losstime/master-losstime.component';
+import { MachineStatusDetailComponent } from './page/machine-status-detail/machine-status-detail.component';
 
 const routes: Routes = [
 {
@@ -12,6 +14,10 @@ const routes: Routes = [
 {
   path : 'Master',component: MasterComponent
 },
+{
+  path : 'MachineStatusDetail',component: MachineStatusDetailComponent
+},
+
 
 
 
